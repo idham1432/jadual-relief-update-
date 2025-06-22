@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jadual Relief</title>
+  <link rel="shortcut icon" href="schedule.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/9c603c8fa5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- ***** HTML ***** -->
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <img class="schedule-img" src="schedule.png" alt="">
+    <div class="left-section">
+      <a href="#timetableHeader" class="iconTooltip">
+        <i class="fa-regular fa-calendar-days"></i>
+        <span class="tooltipText">Timetable</span>
+      </a>
+      <a href="#absentHeader" class="iconTooltip">
+        <i class="fa-solid fa-user"></i>
+        <span class="tooltipText">Absent Teachers</span>
+      </a>
+      <a href="#reliefHeader" class="iconTooltip">
+        <i class="fa-solid fa-gear"></i>
+        <span class="tooltipText">Relief Timetable</span>
+      </a>
+      <i id="themeToggle" class="fa-solid fa-toggle-off"></i>
+      <div class="profile-img">
+        <p>N</p>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Timetable -->
+  <div class="accordion-container">
+    <h2 class="accordion" id="timetableHeader">Timetable</h2>
+    <div class="panel" id="timetableContainer"></div>
+  </div>
+
+  <!-- Absent Teachers -->
+  <div class="accordion-container">
+    <h2 class="accordion" id="absentHeader">Absent Teachers</h2>
+    <div class="panel" id="absentTeachersContainer">
+      <p>Please select the date, day, and session for the absent teacher.</p>
+      <div id="dateDaySelector">
+        <div class="inputGroup">
+          <label for="absentDate">Date:</label>
+          <input type="date" id="absentDate">
+        </div>
+      
+        <div class="inputGroup">
+          <label for="absentDay">Day:</label>
+          <input type="text" id="absentDay" readonly>
+        </div>
+      </div>      
+      <div id="checkboxContainer"></div>
+      <div id="checkboxButtonContainer">
+        <div class="tooltip">
+          <button id="selectAllBtn">
+            <i class="fa-solid fa-check-double"></i>
+          </button>
+          <span class="tooltip-text">Selectt all</span>
+        </div>
+        <div class="tooltip">
+          <button id="resetBtn">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+          <span class="tooltip-text">Reset selections</span>
+        </div>
+        <div class="summaryContainer">
+          <h3>Summary</h3>
+          <p>Total number of teachers: <span id="totalCount">0</span></p>
+          <p>Present: <span id="presentCount">0</span></p>
+          <p>Absent: <span id="absentCount">0</span></p>
+        </div>        
+      </div>    
+    </div>
+  </div>
+
+  <!-- Relief -->
+  <div class="reliefContainer">
+    <h2 id="reliefHeader">Relief</h2>
+    <div>
+      <p>Generate, reset selections, or download the relief timetable.</p>
+      <div id="reliefButtonContainer">
+        <div class="tooltip">
+          <button id="generateBtn">
+            <i class="fa-solid fa-gear"></i>
+          </button>
+          <span class="tooltip-text">Generate relief timetable</span>
+        </div>
+        <div class="tooltip">
+          <button id="clearBtn">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+          <span class="tooltip-text">Clear selections</span>
+        </div>
+        <div class="tooltip">
+          <button id="pdfBtn">
+            <i class="fa-solid fa-download"></i>
+          </button>
+          <span class="tooltip-text">Download PDF</span>
+        </div>
+        <div class="tooltip">
+          <button id="pngBtn">
+            <i class="fa-regular fa-image"></i>
+          </button>
+          <span class="tooltip-text">Download PNG</span>
+        </div>
+      </div>
+      <div class="reliefTimetableContainer">
+        <div class="reliefTimetable"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notes -->
+  <button id="toggleNotesBtn" title="Notes">
+    <i class="fa-regular fa-note-sticky"></i>
+  </button>
+  <div id="notesBox">
+    <textarea placeholder="Write your notes here..."></textarea>
+    <button id="clearNotesBtn" title="Clear Notes">
+      <i class="fa-solid fa-trash"></i>
+    </button>
+  </div>
+
+  <!-- Back To Top -->
+  <button id="backToTopBtn" title="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <img src="penguin.png" alt="" title="You're doing great!">
+  </footer>
+  
+  
+  <!-- ***** JavaScript ***** -->
+  
+  <!-- Required libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <!-- Navbar -->
+  <script src="navbar.js"></script>
+  <!-- Data -->
+  <script src="data.js"></script>
+  <!-- Timetable -->
+  <script src="timetable.js"></script>
+  <!-- Absent Teachers -->
+  <script src="absent.js"></script>
+  <!-- Relief -->
+  <script src="relief.js"></script>
+  <!-- Notes -->
+  <script src="notes.js"></script>
+  <!-- Back To Top -->
+  <script src="backToTop.js"></script>
+</body>
+</html>
