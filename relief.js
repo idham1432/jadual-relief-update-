@@ -11,7 +11,7 @@ function generateReliefTable() {
         <th>Classroom</th>
         <th>Subject</th>
         <th>Time</th>
-        <th>Relief Teacher</th>
+
       </tr>
     </thead>
     <tbody></tbody>
